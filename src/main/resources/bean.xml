@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id = "student" class = "com.hcl.Spring.Dao.Student">
+        <constructor-arg value="90"></constructor-arg>
+        <constructor-arg value="CHENZHUANG"></constructor-arg>
+    </bean>
+
+    <bean id = "factory" class = "com.hcl.Spring.Dao.Student"
+          factory-method="getInstance"></bean>
+
+    <bean id = "one" class = "com.hcl.Spring.Dao.Student" scope="prototype">
+    </bean>
+
+    <!--<bean id = "two" class = "com.hcl.Spring.Dao.Student" init-method="start" destroy-method="end"></bean>-->
+
+    <!--<bean id = "three" class = "com.hcl.Spring.Dao.Person"></bean>-->
+
+    <!--<bean id = "Pfour" class = "com.hcl.Spring.Dao.Person">-->
+        <!--<property name="address" value="one"></property>-->
+        <!--<property name="name" value="yi"></property>-->
+    <!--</bean>-->
+
+    <bean id = "five" class = "com.hcl.Spring.Dao.Person">
+        <property name="address" value="ONE"></property>
+        <property name="name" value = "一"></property>
+        <property name="student" ref="student"></property>
+    </bean>
+
+</beans>
